@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "trislib.h"
 
 int main()
@@ -15,23 +16,31 @@ int main()
 	" | | ", 
 	};
 
-	while(1){
-		system(PULISCI);
-		out(grid);
-		printf("inserisci riga: ");
-		scanf("%d",&r);
-		printf("inserisci colonna: ");
-		scanf("%d",&c);
+	while(i<9){
 		
-		if(i%2==0){
-			opz='X';
-		}else if(i%2==1){
-			opz='O';
-		}
+		turno(&opz,i); //ogni ciclo cambia turno
+		do{	
+			printf("\nturno: %c",opz);
+			grafic(grid);
+			printf("[num da 1 a 3]\n");
+			printf("inserisci riga: ");
+			scanf("%d",&r);
+			printf("inserisci colonna: ");
+			scanf("%d",&c);
+		
+		}while(!((r>=1 && r<=3) || (c>=1 && c<=3)));
+		
 		aggiustacordinate(&r,&c);
 		grid[r][c]=opz;
-		grid[r][c]=opz;
+		
+		if(controllWinner(grid,opz)!=-1 && i>3){
+			grafic(grid);
+			return 0;
+		}
 		i++;
 	}
+	grafic(grid);
+	printf("\npareggio\n");
+
 return 0;
 }
