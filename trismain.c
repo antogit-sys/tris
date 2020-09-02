@@ -15,7 +15,7 @@ int main()
 	"-----", 
 	" | | ", 
 	};
-
+	int z=0;
 	while(i<9){
 		
 		turno(&opz,i); //ogni ciclo cambia turno
@@ -27,8 +27,8 @@ int main()
 			scanf("%d",&r);
 			printf("inserisci colonna: ");
 			scanf("%d",&c);
-		
-		}while(!((r>=1 && r<=3) || (c>=1 && c<=3)));
+
+		}while((r>=1 || r<=3) && (c>=1 || c<=3) && controllGrid(grid,r,c)==-1);
 		
 		aggiustacordinate(&r,&c);
 		grid[r][c]=opz;

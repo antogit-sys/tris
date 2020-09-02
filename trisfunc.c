@@ -6,11 +6,11 @@
 
 void turno(char *t,int i)
 {
-		if(i%2==0){
-				*t='X';
-		}else if(i%2==1){
-				*t='O';
-			}
+	if(i%2==0){
+		*t='X';
+	}else if(i%2==1){
+		*t='O';
+	}
 }
 
 void out(char m[][6])
@@ -55,9 +55,9 @@ void aggiustacordinate(int *r,int *c)
 }
 void grafic(char grid[][6],char c)
 {
-		system(PULISCI);
-		printf("\n\t1 2 3\n");
-		out(grid);
+	system(PULISCI);
+	printf("\n\t1 2 3\n");
+	out(grid);
 	
 }
 int controllWinner(char g[][6],char opz)
@@ -82,5 +82,15 @@ int controllWinner(char g[][6],char opz)
 		return 0;
 	}
 	
+return -1;
+}
+int controllGrid(char grid[][6],int r,int c)
+{
+	aggiustacordinate(&r,&c);
+	
+	if(grid[r][c]==' '){	
+		return 0;
+	}
+
 return -1;
 }
