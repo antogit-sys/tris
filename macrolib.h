@@ -1,5 +1,3 @@
-#include <stdbool.h>
-
 #if __linux__	//se è un sistema linux dichiara
 #	include <stdio_ext.h>	
 #	define PULISCI "clear"
