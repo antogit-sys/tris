@@ -20,11 +20,6 @@ int main()
 	"-----", 
 	" | | ", // 3
 	};
-	
-	//int lol;
-	//int merda=scanf("%d",&lol);
-	//printf("merda: %d",merda);
-	//return 0;
 	while(i<9){
 		
 		turno(&opz,i); //ogni ciclo cambia turno
