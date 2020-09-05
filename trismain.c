@@ -38,7 +38,7 @@ int main()
 				errore=false;
 			}
 			stdinclear(); //pulisco canale stdin
-		}while(((r>=1 || r<=3) && (c>=1 || c<=3) && controllGrid(grid,r,c)==-1) || errore==true || (r==4 || c==4)); //(((r<1 || r>3) && (c<1 || c>3)) && errore!=FALSE && controllGrid(grid,r,c)==-1);
+		}while(((r>=1 || r<=3) && (c>=1 || c<=3) && controllGrid(grid,r,c)==-1) || errore==true || (r==4 || c==4)); 
 		
 		aggiustacordinate(&r,&c);
 		grid[r][c]=opz;
